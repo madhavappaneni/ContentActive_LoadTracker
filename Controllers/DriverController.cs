@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LoadTracker.Data;
 using LoadTracker.Models;
 using LoadTracker.Services;
 

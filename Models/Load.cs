@@ -30,19 +30,18 @@ namespace LoadTracker.Models
         [StringLength(100)]
         public string Destination { get; set; }
 
-        public int CustomerId { get; set; }
+        public int? CustomerId { get; set; }
 
-        public int DriverId { get; set; }
+        public int? DriverId { get; set; }
 
-        public Customer Customer { get; set; }
+        public Customer? Customer { get; set; }
 
-        public Driver Driver{ get; set; }
+        public Driver? Driver{ get; set; }
 
         [Required]
         public DateTime CreatedDateTime { get; set; }
 
-        [Required]
-        public DateTime ModifiedDateTime { get; set; }
+        public DateTime? ModifiedDateTime { get; set; }
     }
 
 }

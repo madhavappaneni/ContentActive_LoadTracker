@@ -15,7 +15,6 @@ namespace LoadTracker.Controllers
         private readonly DataContext _context;
         private readonly LoadService _loadService;
 
-
         public LoadController(DataContext context, LoadService loadService)
         {
             _context = context;
@@ -30,7 +29,6 @@ namespace LoadTracker.Controllers
         {
             return DataSourceLoader.LoadAsync(_context.Loads, loadOptions);
         }
-
 
         [HttpPost("assignDriver")]
         public async Task<IActionResult> AssignDriverToLoad([FromBody] AssignDriverToLoadDTO assignDto)

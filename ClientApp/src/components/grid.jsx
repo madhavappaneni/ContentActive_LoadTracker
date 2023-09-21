@@ -48,8 +48,8 @@ function GridComponent() {
       });
   };
 
-  // update the grid data only when the current page is changed
-  useEffect(() => setGridData(), [currentPage]);
+  // update the grid data only when the current page or loadSearchQuery is changed
+  useEffect(() => setGridData(), [currentPage, loadSearchQuery]);
 
   // code to export the grid data
   const exporterRef = useRef(null);

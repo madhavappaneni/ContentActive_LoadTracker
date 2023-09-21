@@ -62,7 +62,6 @@ export const Popup = ({
             drivers.map((driver) => (
               <button
                 className={`dropdown-item`}
-                key={driver.id}
                 onClick={() => onItemClick(driver)}
               >
                 {driver.name}

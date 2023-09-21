@@ -14,7 +14,8 @@
       "applicationUrl": "https://localhost:7060;http://localhost:5195",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development",
-        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy"
+        "ASPNETCORE_HOSTINGSTARTUPASSEMBLIES": "Microsoft.AspNetCore.SpaProxy",
+        "DATABASE_CONNECTION_STRING": "Server=localhost;Database=LoadTrackerDB;Trusted_Connection=False;TrustServerCertificate=true;User=sa;Password=Mhe@34000"
       }
     },
     "IIS Express": {

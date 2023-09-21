@@ -12,7 +12,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace LoadTracker.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230919205917_AddModels")]
+    [Migration("20230920220744_AddModels")]
     partial class AddModels
     {
         /// <inheritdoc />
@@ -20,7 +20,7 @@ namespace LoadTracker.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "7.0.10")
+                .HasAnnotation("ProductVersion", "7.0.11")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
@@ -193,7 +193,7 @@ namespace LoadTracker.Migrations
                     b.Property<DateTime>("CreatedDateTime")
                         .HasColumnType("datetime2");
 
-                    b.Property<int>("CustomerId")
+                    b.Property<int?>("CustomerId")
                         .HasColumnType("int");
 
                     b.Property<string>("Destination")
@@ -201,7 +201,7 @@ namespace LoadTracker.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<int>("DriverId")
+                    b.Property<int?>("DriverId")
                         .HasColumnType("int");
 
                     b.Property<string>("LoadNumber")
@@ -209,7 +209,7 @@ namespace LoadTracker.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<DateTime>("ModifiedDateTime")
+                    b.Property<DateTime?>("ModifiedDateTime")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Origin")
@@ -251,15 +251,11 @@ namespace LoadTracker.Migrations
                 {
                     b.HasOne("LoadTracker.Models.Customer", "Customer")
                         .WithMany()
-                        .HasForeignKey("CustomerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("CustomerId");
 
                     b.HasOne("LoadTracker.Models.Driver", "Driver")
                         .WithMany()
-                        .HasForeignKey("DriverId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("DriverId");
 
                     b.Navigation("Customer");
 

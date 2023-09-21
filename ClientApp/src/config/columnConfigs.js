@@ -19,9 +19,9 @@ export const gridColumns = [
     { name: 'origin', title: 'Origin', getCellValue: row => row.origin },
     { name: 'destination', title: 'Destination', getCellValue: row => row.destination },
     {
-        name: 'driver', title: 'Driver', getCellValue: row => `${row.driver?.name} (${row.driver?.carrier?.name})`
+        name: 'driver', title: 'Driver', getCellValue: row => row.driver?.name && `${row.driver?.name} (${row.driver?.carrier?.name})`,
     },
     { name: 'customer', title: 'Customer', getCellValue: row => row.customer?.name },
     { name: 'createdDuration', title: 'Duration(Created)', getCellValue: row => calculateTimeAgo(row.createdDateTime) },
-    { name: 'assignedDuration', title: 'Duration(Assigned)', getCellValue: row => calculateTimeAgo(row.modifiedDateTime) },
+    { name: 'assignedDuration', title: 'Duration(Assigned)', getCellValue: row => row.modifiedDateTime && calculateTimeAgo(row.modifiedDateTime) },
 ]
